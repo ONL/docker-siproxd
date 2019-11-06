@@ -5,7 +5,7 @@ RUN dnf install -y \
 	libosip2-devel \
 	&& dnf groupinstall -y "Development Tools"
 
-RUN wget "https://sourceforge.net/settings/mirror_choices?projectname=siproxd&filename=siproxd/0.8.2/siproxd-0.8.2.tar.gz&selected=netix" -O siproxd-0.8.2.tar.gz
+RUN wget 'https://sourceforge.net/settings/mirror_choices?projectname=siproxd&filename=siproxd/0.8.2/siproxd-0.8.2.tar.gz&selected=netix' -O siproxd-0.8.2.tar.gz
 RUN tar -xzf siproxd-0.8.2.tar.gz
 RUN ./configure --enable-static
 RUN make
