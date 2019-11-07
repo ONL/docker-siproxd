@@ -11,7 +11,7 @@ WORKDIR siproxd-0.8.2
 RUN ./configure --enable-static
 RUN make
 RUN make install
-RUN ls -l /usr/sbin | grep sip
+RUN ls -l /usr/local/sbin/ | grep sip
 	
 
 FROM registry.fedoraproject.org/fedora-minimal:31
@@ -20,7 +20,7 @@ RUN microdnf install -y \
 	dumb-init \
 	 && microdnf clean all
 	 
-COPY --from=builder /usr/sbin/siproxd /usr/sbin/siproxd
+COPY --from=builder /usr/local/sbin/siproxd /usr/sbin/siproxd
 
 RUN echo "daemonize = 0" > /etc/siproxd.conf
 
