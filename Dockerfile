@@ -13,7 +13,7 @@ RUN make install
 RUN ls -l /usr/sbin | grep sip
 	
 
-FROM FROM registry.fedoraproject.org/fedora-minimal:31
+FROM registry.fedoraproject.org/fedora-minimal:31
 # System Dependencies
 RUN microdnf install -y \
 	dumb-init \
