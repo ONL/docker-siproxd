@@ -18,6 +18,7 @@ FROM registry.fedoraproject.org/fedora-minimal:31
 # System Dependencies
 RUN microdnf install -y \
 	dumb-init \
+	libosip2 \
 	 && microdnf clean all
 	 
 COPY --from=builder /usr/local/sbin/siproxd /usr/sbin/siproxd
