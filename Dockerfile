@@ -6,7 +6,7 @@ RUN dnf install -y \
 	&& dnf groupinstall -y "Development Tools"
 
 RUN wget 'https://downloads.sourceforge.net/project/siproxd/siproxd/0.8.2/siproxd-0.8.2.tar.gz?r=&ts=1573055515' -O siproxd-0.8.2.tar.gz
-RUN tar -xzf siproxd-0.8.2.tar.gz && cd siproxd-0.8.2
+RUN tar -xzf siproxd-0.8.2.tar.gz && cd siproxd-0.8.2 && ls -lah
 RUN ./configure --enable-static
 RUN make
 RUN make install
