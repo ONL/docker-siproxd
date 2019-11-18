@@ -14,12 +14,11 @@ RUN make install
 RUN ls -l /usr/local/sbin/ | grep sip
 	
 
-FROM registry.fedoraproject.org/fedora-minimal:31
+FROM alpine
 # System Dependencies
-RUN microdnf install -y \
+RUN apk add \
 	dumb-init \
-	libosip2 \
-	 && microdnf clean all
+	libosip2
 	 
 COPY --from=builder /usr/local/sbin/siproxd /usr/sbin/siproxd
 
