@@ -14,9 +14,9 @@ RUN make install
 RUN ls -l /usr/local/sbin/ | grep sip
 	
 
-FROM alpine
+FROM alpine:edge
 # System Dependencies
-RUN apk add \
+RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing \
 	dumb-init \
 	libosip2
 	 
